@@ -10,8 +10,8 @@ class Recipe < ActiveRecord::Base
 	default_params key: key_value
 	format :json
 
-	def self.for keyword
-		get("/search", query: {q: keyword})["recipes"]
+	def self.for term
+		get("/search", query: {q: term})["recipes"]
 	end
 
 end
